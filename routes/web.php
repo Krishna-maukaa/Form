@@ -17,10 +17,14 @@ Use App\Models\Emp;
 Route::get('/',[EmpController::class,'home']);
 Route::get('/register',[EmpController::class,'show']);
  
-Route::post('/register',[EmpController::class,('detail')]);
+Route::post('/register',[EmpController::class,'detail']);
 
 Route::get('/emp',function(){
     $emp = emp::all();
-    echo "<pr>";
+    echo "<pre>";
     print_r($emp->toArray());
+
 });
+
+Route::get('/enter',[EmpController::class,'show']);
+Route::post('/enter',[EmpController::class,'detail']);

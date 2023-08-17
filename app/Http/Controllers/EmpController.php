@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Emp;
 
 class EmpController extends Controller
 {
@@ -18,6 +19,13 @@ class EmpController extends Controller
         
         echo "<pre>";
         print_r($req->all());
+
+        $emp = new emp;
+        $emp->name = $req['name'];
+        $emp->dept = $req['dept'];
+        $emp->city = $req['city'];
+        $emp->save();
+
     }
 }
 
